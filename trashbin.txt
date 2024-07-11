@@ -1,0 +1,103 @@
+export const questionSet = [
+  {
+    id: "1",
+    title: "Sonlar",
+  },
+  {
+    id: "2",
+    title: "Array-1",
+  },
+  {
+    id: "3",
+    title: "Array-2",
+  },
+  {
+    id: "4",
+    title: "String-1",
+  },
+  {
+    id: "5",
+    title: "String-2",
+  },
+  {
+    id: "6",
+    title: "Rekursiya",
+  },
+];
+
+ 
+export const questionSet = [
+  {
+    id: "1",
+    title: "Sonlar",
+  },
+  {
+    id: "2",
+    title: "Array-1",
+  },
+  {
+    id: "3",
+    title: "Array-2",
+  },
+  {
+    id: "4",
+    title: "String-1",
+  },
+  {
+    id: "5",
+    title: "String-2",
+  },
+  {
+    id: "6",
+    title: "Rekursiya",
+  },
+];
+
+ 
+import { questionSet } from "./questionSet";
+
+
+
+window.onload = () => {
+
+};
+
+ 
+const renderDepartment = () => {
+  let root: HTMLDivElement | null = document.querySelector("#root > .row");
+
+  if (root) {
+    root.innerHTML = ""; // Clear existing content
+
+    let htmlContent = ""; // Create a string to accumulate HTML content
+
+    questionSet.forEach((item) => {
+      htmlContent += `
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="department-card">
+            <h2>${item.title}</h2>
+          </div>
+        </div>
+      `;
+    });
+
+    // Set innerHTML once after building the entire HTML content
+    root.innerHTML = htmlContent;
+  }
+}
+ 
+
+    // Set innerHTML only once
+    root.innerHTML = htmlContent;
+
+ 
+import { objectLength } from "./const";
+import {
+  array1,
+  array2,
+  begin1,
+  recursion,
+  string1,
+  string2,
+} from "./question";
+ 

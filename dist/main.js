@@ -1,3 +1,4 @@
+"use strict";
 System.register("const", [], function (exports_1, context_1) {
     "use strict";
     var body;
@@ -13,6 +14,53 @@ System.register("const", [], function (exports_1, context_1) {
         }
     };
 });
+var questionSet = [
+    {
+        id: "1",
+        title: "Sonlar",
+    },
+    {
+        id: "2",
+        title: "Array-1",
+    },
+    {
+        id: "3",
+        title: "Array-2",
+    },
+    {
+        id: "4",
+        title: "String-1",
+    },
+    {
+        id: "5",
+        title: "String-2",
+    },
+    {
+        id: "6",
+        title: "Rekursiya",
+    },
+];
+var renderDepartments = function () {
+    var main = document.querySelector("#main > .row");
+    if (main) {
+        questionSet.map(function (question) {
+            main.innerHTML += "\n            <div class=\"col-md-6 col-md-4 col-lg-3 my-3\">\n                <div id=\"card\" class=\"card\">\n                    <h3>".concat(question.title, "</h3>\n                </div>\n            </div>");
+            var div = document.querySelector("#card");
+            if (div) {
+                var handleClick_1 = function (e) {
+                    e.preventDefault();
+                    console.log("Hello");
+                };
+                div.addEventListener("click", function (event) {
+                    handleClick_1(event);
+                });
+            }
+        });
+    }
+};
+window.onload = function () {
+    renderDepartments();
+};
 System.register("question", [], function (exports_2, context_2) {
     "use strict";
     var begin1, array1, array2, string1, string2, recursion;
@@ -319,88 +367,39 @@ System.register("question", [], function (exports_2, context_2) {
         }
     };
 });
-System.register("questionSet", ["const", "question"], function (exports_3, context_3) {
+System.register("questionSet", [], function (exports_3, context_3) {
     "use strict";
-    var const_1, question_1, questionSet;
+    var questionSet;
     var __moduleName = context_3 && context_3.id;
     return {
-        setters: [
-            function (const_1_1) {
-                const_1 = const_1_1;
-            },
-            function (question_1_1) {
-                question_1 = question_1_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             exports_3("questionSet", questionSet = [
                 {
                     id: "1",
                     title: "Sonlar",
-                    questionsNumber: const_1.objectLength(question_1.begin1),
-                    questions: question_1.begin1,
                 },
                 {
                     id: "2",
                     title: "Array-1",
-                    questionsNumber: const_1.objectLength(question_1.array1),
-                    questions: question_1.array1,
                 },
                 {
                     id: "3",
                     title: "Array-2",
-                    questionsNumber: const_1.objectLength(question_1.array2),
-                    questions: question_1.array2,
                 },
                 {
                     id: "4",
                     title: "String-1",
-                    questionsNumber: const_1.objectLength(question_1.string1),
-                    questions: question_1.string1,
                 },
                 {
                     id: "5",
                     title: "String-2",
-                    questionsNumber: const_1.objectLength(question_1.string2),
-                    questions: question_1.string2,
                 },
                 {
                     id: "6",
                     title: "Rekursiya",
-                    questionsNumber: const_1.objectLength(question_1.recursion),
-                    questions: question_1.recursion,
                 },
             ]);
-        }
-    };
-});
-System.register("main", ["questionSet"], function (exports_4, context_4) {
-    "use strict";
-    var root, questionSet_1, typeQuestion, renderDepartment;
-    var __moduleName = context_4 && context_4.id;
-    return {
-        setters: [
-            function (questionSet_1_1) {
-                questionSet_1 = questionSet_1_1;
-            }
-        ],
-        execute: function () {
-            root = document.querySelector("#root > .row");
-            typeQuestion = Object.values(questionSet_1.questionSet);
-            console.log(typeQuestion);
-            renderDepartment = function () {
-                if (root) {
-                    root.innerHTML = "";
-                    questionSet_1.questionSet.map(function (item) {
-                        if (root) {
-                            root.innerHTML += "\n            <div class=\"col-sm-6 col-md-4 col-lg-3\">\n                <div class=\"department-card\">\n                    <h2>".concat(item.title, "</h2>\n                </div>\n            </div>\n        ");
-                        }
-                    });
-                }
-            };
-            window.onload = function () {
-                renderDepartment();
-            };
         }
     };
 });
